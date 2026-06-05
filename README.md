@@ -50,6 +50,8 @@ I produced three graphs. Each one was a deliberate choice, not just an aesthetic
 
 The bar chart makes the reversal immediately obvious: AES-GCM's bar is shorter at 16 bytes, then dramatically taller at 64 bytes. This is the most intuitive entry point for someone seeing the results for the first time.
 
+![Energy Bar Chart](https://raw.githubusercontent.com/ryprelude/IoT-lowpower-efficiency-project/main/results/energy_bar.png)
+
 ### 3-2. Line Chart — `comparison.png`
 
 **Purpose:** Show the *trajectory* of energy growth as payload size increases.
@@ -61,6 +63,8 @@ This is the most important graph. The line chart revealed what the bar chart cou
 
 The line chart is also where the **crossover point** becomes visible — somewhere around 32 bytes, ASCON becomes the more energy-efficient choice.
 
+![Energy Line Chart](https://raw.githubusercontent.com/ryprelude/IoT-lowpower-efficiency-project/main/results/comparison.png)
+
 ### 3-3. Average + Standard Deviation — `avg_std.png`
 
 **Purpose:** Show measurement stability, not just central tendency.
@@ -68,6 +72,8 @@ The line chart is also where the **crossover point** becomes visible — somewhe
 Reporting only averages hides important information. If the 1,000-run average has high variance, the comparison might not be reliable. This graph was added after I realized that our group's Q&A follow-up document acknowledged this gap — we reported averages but didn't fully address spread.
 
 The error bar graph makes it possible to see whether the gap between ASCON and AES-GCM is consistent or whether it's driven by a few extreme runs.
+
+![Average with Std Dev](https://raw.githubusercontent.com/ryprelude/IoT-lowpower-efficiency-project/main/results/avg_std.png)
 
 ---
 
@@ -227,12 +233,6 @@ python visualize.py
 ```
 
 Output files: `results/energy_bar.png`, `results/comparison.png`, `results/avg_std.png`
-
-### Generated Charts
-
-![Energy Bar Chart](https://raw.githubusercontent.com/ryprelude/IoT-lowpower-efficiency-project/main/results/energy_bar.png)
-![Energy Line Chart](https://raw.githubusercontent.com/ryprelude/IoT-lowpower-efficiency-project/main/results/comparison.png)
-![Average with Std Dev](https://raw.githubusercontent.com/ryprelude/IoT-lowpower-efficiency-project/main/results/avg_std.png)
 
 ---
 
